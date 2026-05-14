@@ -1,9 +1,8 @@
 // import FunctionalComponent from "./components/LessonTwo/FunctionalComponent.tsx";
 // import ClassComponent from "./components/LessonTwo/ClassComponent.tsx";
 // import ArrowFunctionalComponent from "./components/LessonTwo/ArrowFunctionalComponent.tsx";
-
+// import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFunctionalComponentWithProps.tsx";
 import Layout from "./components/Layout.tsx";
-import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFuntionalComponentWithProps.tsx";
 
 // type PropsA = {
 //   title: string,
@@ -44,33 +43,33 @@ import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFun
 
 function App() {
 
-  return (
-      <>
-        {/*LESSON TWO*/}
-        {/*<FunctionalComponent />*/}
-        {/*<FunctionalComponent />*/}
-        {/*<FunctionalComponent />*/}
-        {/*<FunctionalComponent />*/}
-        {/*<ClassComponent />*/}
-        {/*<ArrowFunctionalComponent />*/}
+    return (
+        <>
+            {/*LESSON TWO*/}
+            {/*<FunctionalComponent />*/}
+            {/*<FunctionalComponent />*/}
+            {/*<FunctionalComponent />*/}
+            {/*<FunctionalComponent />*/}
+            {/*<ClassComponent />*/}
+            {/*<ArrowFunctionalComponent />*/}
 
-        {/*LESSON THREE*/}
-        {/*<ArrowFunctionalComponentWithProps title="Heading 1"/>*/}
-        {/*<ArrowFunctionalComponentWithProps*/}
-        {/*    title="Second Title"*/}
-        {/*    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, deserunt dicta excepturi fugit ipsa modi perferendis quo repellat voluptates."*/}
-        {/*/>*/}
+            {/*LESSON THREE*/}
+            {/*<ArrowFunctionalComponentWithProps title="Heading 1"/>*/}
+            {/*<ArrowFunctionalComponentWithProps*/}
+            {/*  title="Second Title"*/}
+            {/*  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, deserunt dicta excepturi fugit ipsa modi perferendis quo repellat voluptates."*/}
+            {/*/>*/}
 
-        <Layout>
-          <ArrowFunctionalComponentWithProps
-              title="Second Title"
-              description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, deserunt dicta excepturi fugit ipsa modi perferendis quo repellat voluptates."
-          />
-            <p className="text-red-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur eos esse est eum expedita, fugiat fugit incidunt modi perferendis quae quaerat, quam quasi qui quia unde velit vitae voluptatem voluptates.</p>
-        </Layout>
+            <Layout addClasses="text-blue-600 bg-gray-100">
+                {/*<ArrowFunctionalComponentWithProps*/}
+                {/*  title="Second Title"*/}
+                {/*  description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet, deserunt dicta excepturi fugit ipsa modi perferendis quo repellat voluptates."*/}
+                {/*/>*/}
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, reiciendis.</p>
+            </Layout>
 
-      </>
-  )
+        </>
+    )
 }
 
 export default App
