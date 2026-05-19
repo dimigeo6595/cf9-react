@@ -1,15 +1,15 @@
 import {useEffect, useRef} from "react";
 
-const FocusInput = () =>{
+const FocusInput = () => {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleCLick = () => {
+    const handleClick = () => {
         inputRef.current?.focus();
     }
 
     useEffect(() => {
         inputRef.current?.focus();
-    })
+    }, [])
 
     return (
         <>
@@ -17,10 +17,10 @@ const FocusInput = () =>{
                 <input
                     ref={inputRef}
                     type="text"
-                    className="border focus:border-orange-500 px-4 py-2 "
+                    className="border px-4 py-2 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
                 <button className="bg-cf-dark-gray  text-white px-4 py-2"
-                onClick={() => handleCLick()}>
+                        onClick={handleClick}>
                     Focus Input
                 </button>
             </div>
