@@ -2,11 +2,13 @@
 // import ClassComponent from "./components/LessonTwo/ClassComponent.tsx";
 // import ArrowFunctionalComponent from "./components/LessonTwo/ArrowFunctionalComponent.tsx";
 // import ArrowFunctionalComponentWithProps from "./components/LessonThree/ArrowFunctionalComponentWithProps.tsx";
+// import Layout from "./components/Layout.tsx";
+// // import CounterAdvanced from "./components/LessonFour/CounterAdvanced.tsx";
+// // import NameChanger from "./components/LessonFive/NameChanger.tsx";
+// // import CounterWithCustomHook from "./components/LessonFive/CounterWithCustomHook.tsx";
+// import NameChangerWithTitle from "./components/LessonFive/NameChangerWithTitle.tsx";
+import AutoRedirect from "./components/LessonSix/AutoRedirect.tsx";
 import Layout from "./components/Layout.tsx";
-// import CounterAdvanced from "./components/LessonFour/CounterAdvanced.tsx";
-// import NameChanger from "./components/LessonFive/NameChanger.tsx";
-// import CounterWithCustomHook from "./components/LessonFive/CounterWithCustomHook.tsx";
-import NameChangerWithTitle from "./components/LessonFive/NameChangerWithTitle.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
 // import {useState} from "react";
@@ -83,10 +85,16 @@ function App() {
             {/*</Layout>*/}
 
             {/*LESSON FIVE*/}
+            {/*<Layout addClasses="bg-gray-50">*/}
+            {/*    /!*<NameChanger />*!/*/}
+            {/*    /!*<CounterWithCustomHook />*!/*/}
+            {/*    <NameChangerWithTitle />*/}
+            {/*</Layout>*/}
+
+
+            {/*LESSON SIX*/}
             <Layout addClasses="bg-gray-50">
-                {/*<NameChanger />*/}
-                {/*<CounterWithCustomHook />*/}
-                <NameChangerWithTitle />
+                <AutoRedirect/>
             </Layout>
         </>
     )
