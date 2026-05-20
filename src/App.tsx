@@ -10,7 +10,8 @@
 // import AutoRedirect from "./components/LessonSix/AutoRedirect.tsx";
 import Layout from "./components/Layout.tsx";
 // import WindowSize from "./components/LessonSix/WindowSize.tsx";
-import FocusInput from "./components/LessonSix/FocusInput.tsx";
+// import FocusInput from "./components/LessonSix/FocusInput.tsx";
+import PreviousValue from "./components/LessonSix/PreviousValue.tsx";
 // import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
@@ -100,7 +101,8 @@ function App() {
                 {/*<AutoRedirect/>*/}
                 {/*<AutoRedirectAdvanced/>*/}
                 {/*<WindowSize/>*/}
-                <FocusInput/>
+                {/*<FocusInput/>*/}
+                <PreviousValue/>
             </Layout>
         </>
     )
