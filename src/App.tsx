@@ -8,10 +8,18 @@
 // // import CounterWithCustomHook from "./components/LessonFive/CounterWithCustomHook.tsx";
 // import NameChangerWithTitle from "./components/LessonFive/NameChangerWithTitle.tsx";
 // import AutoRedirect from "./components/LessonSix/AutoRedirect.tsx";
-import Layout from "./components/Layout.tsx";
-// import WindowSize from "./components/LessonSix/WindowSize.tsx";
-// import FocusInput from "./components/LessonSix/FocusInput.tsx";
-import PreviousValue from "./components/LessonSix/PreviousValue.tsx";
+// import Layout from "./components/Layout.tsx";
+// // import WindowSize from "./components/LessonSix/WindowSize.tsx";
+// // import FocusInput from "./components/LessonSix/FocusInput.tsx";
+// import PreviousValue from "./components/LessonSix/PreviousValue.tsx";
+// import {useEffect} from "react";
+import {Route, Routes} from "react-router";
+import NameChanger from "./components/LessonFive/NameChanger.tsx";
+import HomePage from "./pages/HomePage.tsx";
+import Counter from "./components/LessonFour/Counter.tsx";
+import CounterAdvanced from "./components/LessonFour/CounterAdvanced.tsx";
+// import Layout from "./components/Layout.tsx";
+import RouterLayout from "./components/LessonTwo/RouterLayout.tsx";
 // import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
@@ -58,6 +66,12 @@ import PreviousValue from "./components/LessonSix/PreviousValue.tsx";
 
 function App() {
 
+
+    // useEffect(() => {
+    //     history.pushState({}, "", "/about");
+    // },[])
+
+
     return (
         <>
             {/*LESSON TWO*/}
@@ -96,14 +110,49 @@ function App() {
             {/*</Layout>*/}
 
 
-            {/*LESSON SIX*/}
-            <Layout addClasses="bg-gray-50">
-                {/*<AutoRedirect/>*/}
-                {/*<AutoRedirectAdvanced/>*/}
-                {/*<WindowSize/>*/}
-                {/*<FocusInput/>*/}
-                <PreviousValue/>
-            </Layout>
+            {/*/!*LESSON SIX*!/*/}
+            {/*<Layout addClasses="bg-gray-50">*/}
+            {/*    /!*<AutoRedirect/>*!/*/}
+            {/*    /!*<AutoRedirectAdvanced/>*!/*/}
+            {/*    /!*<WindowSize/>*!/*/}
+            {/*    /!*<FocusInput/>*!/*/}
+            {/*    <PreviousValue/>*/}
+            {/*</Layout>*/}
+
+            {/*/!*LESSON SEVEN*!/*/}
+            <Routes>
+
+                <Route element={<RouterLayout/>}>
+                    <Route index element={<HomePage />} />
+
+                    {/*<Route path="examples?">*/}
+                    <Route path="examples">
+                        <Route index element={<NameChanger />} />
+                        <Route path="name-changer" element={<NameChanger />} />
+                        <Route path="counter" element={<Counter />} />
+                        <Route path="counter-advanced" element={<CounterAdvanced />} />
+                    </Route>
+                </Route>
+
+
+                {/*/users*/}
+                {/*/users/userId*/}
+                {/*<Route path="users">*/}
+                {/*    <Route index element={UserListPage}/>*/}
+                {/*    <Route path=":userId" element={UserPage}/>                    */}
+                {/*</Route>*/}
+
+                {/*/files*/}
+                {/*/files/**/}
+                {/*<Route path="files/*" element={<File />}/>*/}
+
+                {/*/!*let params = useParams();*!/*/}
+                {/*/!*let filepath = params["*"]*!/*/}
+
+                {/*<Route path="*" element={<NotFoundPage />} />*/}
+            </Routes>
+
+
         </>
     )
 }
