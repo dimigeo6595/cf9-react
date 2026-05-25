@@ -20,6 +20,9 @@ import Counter from "./components/LessonFour/Counter.tsx";
 import CounterAdvanced from "./components/LessonFour/CounterAdvanced.tsx";
 // import Layout from "./components/Layout.tsx";
 import RouterLayout from "./components/LessonTwo/RouterLayout.tsx";
+import UserPage from "./pages/UserPage.tsx";
+import SearchPage from "./pages/SearchPage.tsx";
+// import UserPage from "./pages/UserPage.tsx";
 // import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
 // import ClassCounter from "./components/LessonFour/ClassCounter.tsx";
@@ -131,16 +134,22 @@ function App() {
                         <Route path="name-changer" element={<NameChanger />} />
                         <Route path="counter" element={<Counter />} />
                         <Route path="counter-advanced" element={<CounterAdvanced />} />
+                    {/*    /users/16 Path Params */}
+                    {/*    /users?id=16 Query Params */}
+                    {/*    /users?page=2&sort=asc Query Params */}
                     </Route>
                 </Route>
 
 
                 {/*/users*/}
                 {/*/users/userId*/}
-                {/*<Route path="users">*/}
-                {/*    <Route index element={UserListPage}/>*/}
-                {/*    <Route path=":userId" element={UserPage}/>                    */}
-                {/*</Route>*/}
+                <Route path="users">
+                    {/*<Route index element={UserListPage}/>*/}
+                    <Route path=":userId" element={<UserPage />}/>
+                </Route>
+
+                <Route path="search" element={<SearchPage />}/>
+
 
                 {/*/files*/}
                 {/*/files/**/}
