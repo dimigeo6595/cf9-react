@@ -1,14 +1,8 @@
 import {useState} from "react";
 import {z} from "zod";
 
-// type FormValues = {
-//     name: string,
-//     email: string,
-//     message: string,
-// }
-
 const formSchema = z.object({
-    name: z.string().trim().min(1,{error: "Name is required"}),
+    name: z.string().trim().min(1, {error: "Name is required"}),
     email: z
         .email()
         .min(1, {error: "Email is required"}),
@@ -19,7 +13,6 @@ const formSchema = z.object({
         .min(1, {error: "Message is required"})
         .max(8, {error: "Message must be at most 8 characters long"})
 })
-
 type FormValues = z.infer<typeof formSchema>;
 
 type FormErrors = {
@@ -34,7 +27,6 @@ const initialValues: FormValues = {
     message: "",
 }
 
-
 const MultiFieldFormWithValidationWithZod = () => {
     const [values, setValues] = useState<FormValues>(initialValues);
     const [errors, setErrors] = useState<FormErrors>({});
@@ -42,21 +34,18 @@ const MultiFieldFormWithValidationWithZod = () => {
 
     const validateForm = (): boolean => {
         const result = formSchema.safeParse(values);
-        // valid -> {success: true, data: ValidatedData}
+        // valid -> {success: true, data: validatedData}
         // invalid -> {success: false, error: ZodError}
 
         if (!result.success) {
             const newErrors: FormErrors = {};
             console.log(result.error.issues);
-
             result.error.issues.forEach((issue) => {
                 const fieldName = issue.path[0] as keyof FormValues;
-                newErrors[fieldName] = issue.message;
+                newErrors[fieldName]  = issue.message;
             })
-
             setErrors(newErrors);
             return false;
-
         }
 
         setErrors({});
@@ -78,13 +67,13 @@ const MultiFieldFormWithValidationWithZod = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         const isValid = validateForm();
-        if(isValid) {
+        if (isValid) {
             setValues(values);
             setErrors({});
             setSubmittedData(null);
         }
-
     }
 
     return (
