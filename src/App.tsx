@@ -27,6 +27,7 @@ import MultiFieldFormWithValidation from "./components/LessonNine/MultiFieldForm
 import MultiFieldFormWithValidationWithZod from "./components/LessonTen/MultiFieldFormWithValidationWithZod.tsx";
 import MultiFieldFormWithValidationWithHookForm
     from "./components/LessonTen/MultiFieldFormWithValidationWithHookForm.tsx";
+import ProductListPage from "./pages/ProductListPage.tsx";
 // import UserPage from "./pages/UserPage.tsx";
 // import AutoRedirectAdvanced from "./components/LessonSix/AutoRedirectAdvanced.tsx";
 // import Counter from "./components/LessonFour/Counter.tsx";
@@ -165,6 +166,14 @@ function App() {
 
 
                 <Route path="multifield-form-validation-hook-form" element={<MultiFieldFormWithValidationWithHookForm />} />
+
+                <Route path="products">
+                    <Route index element ={<ProductListPage />} />
+
+
+                </Route>
+
+
 
 
                 {/*/files*/}
