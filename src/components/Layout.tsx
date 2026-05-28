@@ -1,5 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
+import {Toaster} from "sonner";
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -12,6 +13,7 @@ const Layout = ({children, addClasses}:LayoutProps) => {
             <div className={addClasses}>
                 <Header/>
                 <main className="container mx-auto min-h-[95vh] pt-36">{children}</main>
+                <Toaster />
                 <Footer/>
             </div>
         </>
